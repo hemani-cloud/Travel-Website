@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <title>Travel Vacation Website</title>
+    <style>
+      body{
+        font-family: 'Open Sans', sans-serif;
+      }
+    .navbar-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;      
+    }
+
+        .logo {
+      display: flex;
+      flex-direction: column;   /* stack vertically */
+      align-items: center;      /* center horizontally */              /* space between image and text */
+      font-size: 2rem;
+      font-weight: bold;
+      color: black;
+    }
+
+    .logo img {
+      width: 150px;
+      height: 150px;
+    }
+
+    /* Search bar */
+        .search-container {
+      position: relative;
+      width: 700px;
+      
+    }
+
+    .search-container input {
+      width: 100%;
+      background-color: #F31B03;
+      padding: 12px 45px 12px 15px;
+      border-radius: 40px;
+      border: 1px solid #f38080;
+      font-size: 1rem;
+      height: 50px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    ::placeholder{
+        font-size: 30px;
+        color: white;
+    }
+    .search-container::after {
+      content: "🔍";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: #555;
+      pointer-events: none;
+    }
+
+    /* Optional hover effect */
+    .search-container input:focus {
+      outline: none;
+      border-color: #f4a261;
+      box-shadow: 0 0 5px #f4a261;
+    }
+
+    /* Register button */
+    .register-btn {
+      background-color: #F31B03;
+      border: none;
+      width: 300px;
+      height: 60px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .register-btn:hover {
+      background-color: #e76f51;
+    }
+
+    /* Bottom nav menu */
+    .navbar-bottom {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      font-size: 40px;
+      padding: 10px 0;
+      font-weight: bold;
+  
+    }
+
+    .navbar-bottom a {
+      text-decoration: none;
+      color: black;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-bottom a.active {
+      text-decoration:underline;
+      color: #0e0d0d;
+    }
+ 
+
+    @media (max-width: 768px) {
+      .navbar-top {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-bar {
+        margin: 15px 0;
+      }
+
+      .navbar-bottom {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+    }
+     .hero {
+  background-image: url('images/c715545b8997ac0f5ee5cb96d64ede95ba2b443e.jpg'); /* Replace with your image path */
+  background-size: cover;
+  
+  background-position: center;
+  color: white;
+  height: 700px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  
+}
+.hero1 {
+  background-image: url('images/ba9baeaeddfe19451099c8ff0547ca368c85f970.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 300px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  
+}
+.hero-content {
+    background: rgba(0, 0, 0, 0.5); /* subtle overlay */
+    width: 100%;
+  
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+    text-align: left;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  line-height: 2;
+}
+
+.hero p {
+    text-align: left;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 25px;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: #F31B03;
+  color: white;
+  border: none;
+  padding: 24px;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.btn-secondary {
+   background: rgba(0, 0, 0, 0.5); /* subtle overlay */
+
+  color: #f8f6f6;
+  border: none;
+  padding:24px;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* 📱 Media Queries */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-content {
+    padding: 20px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+} 
+.why-choose-us {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.why-choose-us h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.benefit-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color:#F31B03;
+  color: white;
+  padding: 20px;
+  width: 450px;
+  height: 300px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgb(72, 70, 70);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+ width: 250px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* 📱 Media Queries */
+@media (max-width: 768px) {
+  .benefit-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .why-choose-us h2 {
+    font-size: 1.6rem;
+  }
+}    
+      .about-us {
+  background-image: url('images/e3862a970de17f1b222ed2e5177544c1542ccf0b.png'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 800px;
+  color: white;
+}
+
+.about-overlay {
+    padding: 50px;
+  border-radius: 10px;
+  width: 50%;
+  height: 100%;
+  
+}
+
+.about-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.about-content p {
+  font-size: 2.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+
+  .about-overlay {
+    padding: 20px;
+  }
+}
+        .popular-destinations {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.popular-destinations h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.destination-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.destination-card {
+  background-color:#F31B03;
+  color: white;
+  width: 250px;
+  height: 200px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px grey;
+  transition: transform 0.3s ease;
+}
+
+.image-circle {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid white;
+}
+
+.image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.destination-card p {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .destination-card {
+    width: 45%;
+  }
+
+  .destination-grid {
+    gap: 20px;
+  }
+
+  .popular-destinations h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .destination-card {
+    width: 100%;
+  }
+}
+        .exclusive-packages {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.exclusive-packages h2 {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.package-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.package-card {
+  background-color: #F31B03;
+  color: white;
+  width: 350px;
+  height: 500px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px grey;
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.heart {
+  font-size: 2rem;
+  cursor: pointer;
+  color: red;
+  transition: color 0.3s ease;
+}
+
+.heart.active {
+  color: white;
+}
+
+.package-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.package-card h3 {
+    padding: 10px;
+    text-align: left;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.package-card p {
+    padding: 10px;
+    text-align: left;
+    font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.price {
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: left;
+  font-weight: bold;
+}
+
+.package-card button {
+    width: 200px;
+  background-color: white;
+  color: #d32f2f;
+  border: none;
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .package-card {
+    width: 45%;
+  }
+
+  .exclusive-packages h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .package-card {
+    width: 100%;
+  }
+}
+.testimonials {
+  background-color: #F31B03;
+  color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testimonial-grid {
+  display: flex;
+  justify-content: center;
+  border-radius: 30px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.testimonial-card {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 800px;
+}
+
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 4px #fff;
+}
+
+.review-content {
+  margin-left: 50px;
+  flex: 1;
+}
+
+.review-text {
+    
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.stars {
+  font-size: 2rem;
+  text-align: left;
+  color: #f7f7f3;
+  margin-bottom: 5px;
+}
+
+.reviewer-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 100%;
+  }
+
+  .testimonial-grid {
+    gap: 20px;
+  }
+
+  .testimonials h2 {
+    font-size: 1.6rem;
+  }
+}
+    .wanderwise-footer {
+        background: #000;
+        color: #fff;
+        padding: 40px 20px;
+        width: 100%;
+        
+    }
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 200px;
+}
+
+.footer-brand {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  align-items: center;      /* center horizontally */              /* space between image and text */
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(245, 242, 242);
+}
+
+.footer-brand img {
+  width: 250px;
+  height: 250px;
+}
+
+.footer-links {
+  display: flex;
+  flex: 3 1 1000px;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 3rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.footer-section img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.contact p {
+  margin: 6px 0;
+  font-size: 2rem;
+}
+
+.social-icons span {
+  font-size: 2rem;
+  gap:10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+   <div class="navbar-top">
+     <div class="logo">
+      <img src="Images/b88b264bdea4cacb0a49c00e0da8648ef0b1dc89.png" alt="Wanderwise Logo" />
+      <br><span>Wanderwise</span>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Search Destinations" />
+    </div>
+
+    <a href="Home.html"><button class="register-btn">Register</button></a>
+  </div>
+
+  <div class="navbar-bottom">
+    <a href="Home.html">Home</a>
+    <a href="Destinations.html">Destinations</a>
+    <a href="Categories.html">Categories</a>
+    <a href="Packages.html">Packages</a>
+    <a href="Blogs.html">Blogs</a>
+    <a href="Contact.html">Contact</a>
+  </div>
+  <section class="hero">
+  <div class="hero-content">
+    <h1>Explore the World<br>Your Way</h1>
+    <p>Find unforgettable trips, adventures, and escapes around the globe.</p>
+    <div class="hero-buttons">
+      <a href="Destinations.html"><button class="btn-primary">Plan Your Trip</button></a>
+      <a href="Enquiry.html"><button class="btn-secondary">Enquiry →</button></a>
+    </div>
+  </div>
+</section>
+<section class="hero1"></section>
+<section class="why-choose-us">
+  <h2>Why Choose Us!</h2>
+  <div class="benefit-cards">
+    <div class="card">
+      <img src="Images/efbd497c33f7af00681ba50670bd68f926cc0dc9.png" alt="Trusted by travellers" />
+      <p>"Trusted by 1Million travellers"</p>
+    </div>
+    <div class="card">
+      <img src="Images/c68ee2f833f5043a9e2e7e421ffe41548237aaa4.png" alt="Best Price Guarantee" />
+      <p>"Best Price Guarantee"</p>
+    </div>
+    <div class="card">
+      <img src="Images/66fb8ba9c5949eb7e08df2ba30f57d7103d757bc.png" alt="Certified Travel Experts" />
+      <p>"Certified Travel Experts"</p>
+    </div>
+    <div class="card">
+      <img src="Images/d60f813b31676357de6b2e3981fa4ba1b0a5429d.png" alt="24/7 Customer Support" />
+      <p>"24/7 Customer Support"</p>
+    </div>
+  </div>
+</section>
+<section class="about-us">
+  <div class="about-overlay">
+    <div class="about-content">
+      <h2>---------ABOUT US---------</h2>
+      <p>
+        At WanderWise, we believe that travel is more than just reaching a destination—it's about experiencing the journey, creating lasting memories, and discovering new perspectives.
+      </p>
+      <p>
+        Founded by passionate explorers and travel experts, WanderWise was built to simplify the way you plan, book, and enjoy your trips. Whether you're dreaming of a serene beach retreat, an adrenaline-pumping adventure, or a culturally rich city escape, our platform connects you with handpicked experiences tailored to your interests.
+      </p>
+    </div>
+  </div>
+</section>
+ <section class="popular-destinations">
+  <h2>Popular destinations</h2>
+  <div class="destination-grid">
+    <div class="destination-card">
+      <div class="image-circle">
+        <a href="Destinations.html"><img src="Images/e39633d7eb1f13913739774345d485717494a166.png" alt="Paris" /></a>
+      </div>
+      <p>Paris</p>
+    </div>
+    <div class="destination-card">
+      <div class="image-circle">
+        <a href="Destinations.html"><img src="Images/acdc55b6218cd7b113c68d4566e5d84730f52f47.png" alt="Bali" /></a>
+      </div>
+      <p>Bali</p>
+    </div>
+    <div class="destination-card">
+      <div class="image-circle">
+        <a href="Destinations.html"><img src="Images/147d21d43eb3ff209a0e71f37ae14ce529a69541.jpg" alt="Cape Town" /></a>
+      </div>
+      <p>Cape Town</p>
+    </div>
+    <div class="destination-card">
+      <div class="image-circle">
+        <a href="Destinations.html"><img src="Images/4fa7e6e109ec33270d7d77baa9fdbb42720a25b1.jpg" alt="Rome" /></a>
+      </div>
+      <p>Rome</p>
+    </div>
+    <div class="destination-card">
+      <div class="image-circle">
+        <a href="Destinations.html"><img src="Images/c83941f98472ee7729f99e871827fb7b117e1246.jpg" alt="California" /></a>
+      </div>
+      <p>California</p>
+    </div>
+  </div>
+</section><section class="exclusive-packages">
+  <h2>Exclusive Packages</h2>
+  <div class="package-grid">
+    <div class="package-card">
+      <div class="card-header">
+        <span class="heart" onclick="toggleHeart(this)"><i class="bi bi-heart-fill"></i></span>
+      </div>
+      <img src="Images/e39633d7eb1f13913739774345d485717494a166.png" alt="Paris" />
+      <h3>Paris</h3>
+      <p>6 Days / 5 Nights</p>
+      <p class="price">$1200</p>
+      <a href="Checkout.html"><button>Book now</button></a>
+    </div>
+
+    <div class="package-card">
+      <div class="card-header">
+        <span class="heart" onclick="toggleHeart(this)"><i class="bi bi-heart-fill"></i></span>
+      </div>
+      <img src="Images/acdc55b6218cd7b113c68d4566e5d84730f52f47.png" alt="Bali" />
+      <h3>Bali</h3>
+      <p>8 Days / 7 Nights</p>
+      <p class="price">$2200</p>
+      <a href="Checkout.html"><button>Book now</button></a>
+    </div>
+
+    <div class="package-card">
+      <div class="card-header">
+        <span class="heart" onclick="toggleHeart(this)"><i class="bi bi-heart-fill"></i></span>
+      </div>
+      <img src="Images/147d21d43eb3ff209a0e71f37ae14ce529a69541.jpg" alt="Cape Town" />
+      <h3>Cape Town</h3>
+      <p>7 Days / 6 Nights</p>
+      <p class="price">$1800</p>
+      <a href="Checkout.html"><button>Book now</button></a>
+    </div>
+
+    <div class="package-card">
+      <div class="card-header">
+        <span class="heart" onclick="toggleHeart(this)"><i class="bi bi-heart-fill"></i></span>
+      </div>
+      <img src="Images/4fa7e6e109ec33270d7d77baa9fdbb42720a25b1.jpg" alt="Rome" />
+      <h3>Rome</h3>
+      <p>6 Days / 5 Nights</p>
+      <p class="price">$1200</p>
+      <a href="Checkout.html"><button>Book now</button></a>
+    </div>
+  </div>
+</section>
+<h2>What Say Our Clients</h2>
+<section class="testimonials">
+  
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+        <div class="profile-pic">
+            <img src="Images/8af854902f94c9045981f27e5b8f948e3033c073.jpg" alt="Emily R.">
+            <p class="reviewer-name">Emily R.</p>
+        </div>
+        <div class="review-content">
+            <p class="review-text">
+                This travel agency made our vacation unforgettable! Excellent service and a fantastic itinerary. Highly recommend
+            </p>
+            <div class="stars">
+                ★★★★★
+            </div>    
+        </div>
+    </div>
+    <div class="testimonial-card">
+        <div class="profile-pic">
+            <img src="Images/fac1af7a257732ec3d775a3ebd589818b1689ede.jpg" alt="David W." />
+            <p class="reviewer-name">David W.</p>
+        </div>
+        <div class="review-content">
+            <p class="review-text">
+                This travel agency made our vacation unforgettable! Excellent service
+            </p>
+            <div class="stars">
+                ★★★★★
+            </div>    
+        </div>
+    </div>
+    <div class="testimonial-card">
+        <div class="profile-pic">
+            <img src="Images/54ec28319019985e836129b39c521de013225914.jpg" alt="Andreya S." />
+            <p class="reviewer-name">Andreya S.</p>
+        </div>
+        <div class="review-content">
+            <p class="review-text">
+                This travel agency made our vacation unforgettable! Excellent service
+            </p>
+            <div class="stars">
+                ★★★★★
+            </div>    
+        </div>
+    </div>
+  </div>
+</section>
+  <footer class="wanderwise-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="Images/b88b264bdea4cacb0a49c00e0da8648ef0b1dc89.png" alt="Wanderwise Logo">
+      <h2>Wanderwise</h2>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <ul>
+          <li>Who We Are</li>
+          <li>Our Mission</li>
+          <li>How It Works</li>
+          <li>Success</li>
+          <li>Vacations</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li>Browse</li>
+          <li>Packages</li>
+          <li>Categories</li>
+          <li>Support</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Explore</h3>
+        <ul>
+          <li>Adventure</li>
+          <li>Beach</li>
+          <li>City Tours</li>
+          <li>Family</li>
+        </ul>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Contact & Social</h3>
+        <p>123 Saik Street, Chennai, TN</p>
+        <p>+91-7867980-688</p>
+        <p>Wan@wanderwisetravel.com</p>
+      </div>
+
+      <div class="footer-section">
+        <img src="Images/8c95e3ef46e407b0142cba5419c2cbb1714d7e95.jpg">
+        <div class="social-icons">
+            <h3>Follow Us On:</h3>
+          <span><i class="bi bi-youtube"></i></span>
+          <span><i class="bi bi-google"></i></span>
+          <span><i class="bi bi-facebook"></i></span>
+          <span><i class="bi bi-twitter"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 wanderwisevacation. All rights reserved.</p>
+    <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>  
+  function toggleHeart(element) {
+    element.classList.toggle('active');
+  }
+
+   document.getElementById('searchForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+
+    // Example routing logic
+    if (query === "Destination") {
+      window.location.href = "Destinations.html";
+    }  else {
+      window.location.href = "Destinations.html"; // fallback page
+    }
+  });
+</script>
+</body>
+</html>

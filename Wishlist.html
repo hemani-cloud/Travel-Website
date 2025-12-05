@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <title>Travel Vacation Website</title>
+    <style>
+      body{
+        font-family: 'Open Sans', sans-serif;
+      }
+    .navbar-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;      
+    }
+
+        .logo {
+      display: flex;
+      flex-direction: column;   /* stack vertically */
+      align-items: center;      /* center horizontally */              /* space between image and text */
+      font-size: 2rem;
+      font-weight: bold;
+      color: black;
+    }
+
+    .logo img {
+      width: 150px;
+      height: 150px;
+    }
+
+    .search-bar {
+  display: flex;
+  align-items: center;
+  background: #F31B03;
+  padding: 10px 20px;
+  border-radius: 30px;
+  width: 1000px;
+}
+
+.search-bar input {
+    width: 100%;
+      background-color: #F31B03;
+      padding: 12px 45px 12px 15px;
+      border:none;
+      font-size: 1rem;
+      height: 50px;
+      
+}
+::placeholder{
+        font-size: 30px;
+        color: white;
+    }
+.search-bar button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+}
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 3rem;
+     
+    }
+    .nav-icons i{
+         color: #0c0c0c;
+        font-weight: 500;
+    }
+    .nav-icons img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+    .profile-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-toggle {
+  
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 110px;
+  right: 30px;
+  font-size: 2rem;
+  background-color: #F31B03;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-width: 700px;
+  z-index: 1000;
+   color: #f5f0f0;
+}
+
+.dropdown-list a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #f5f0f0;
+  
+}
+
+    /* Bottom nav menu */
+    .navbar-bottom {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      font-size: 40px;
+      padding: 10px 0;
+      font-weight: bold;
+  
+    }
+
+    .navbar-bottom a {
+      text-decoration: none;
+      color: black;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-bottom a.active {
+      text-decoration:underline;
+      color: #0e0d0d;
+    }
+ 
+
+    @media (max-width: 768px) {
+      .navbar-top {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-bar {
+        margin: 15px 0;
+      }
+
+      .navbar-bottom {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+    }
+ .cart-container {
+  max-width: 80%;
+  margin: 30px auto;
+  font-family: sans-serif;
+  background: #fff8f0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.carthead{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
+  margin-top: 20px;
+}
+.cart-table th{
+    color: white;
+
+  background-color: #F31B03;
+}
+.cart-table th,
+.cart-table td {
+    font-size: 2rem;
+  padding: 20px;
+  text-align: center;
+}
+
+.cart-table img {
+  width: 80px;
+  border-radius: 8px;
+}
+.add-btn{
+    background-color:#F31B03;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    padding: 20px;
+} 
+     .wanderwise-footer {
+        background: #000;
+        color: #fff;
+        padding: 40px 20px;
+        width: 100%;
+        
+    }
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 200px;
+}
+
+.footer-brand {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  align-items: center;      /* center horizontally */              /* space between image and text */
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(245, 242, 242);
+}
+
+.footer-brand img {
+  width: 250px;
+  height: 250px;
+}
+
+.footer-links {
+  display: flex;
+  flex: 3 1 1000px;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 3rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.footer-section img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.contact p {
+  margin: 6px 0;
+  font-size: 2rem;
+}
+
+.social-icons span {
+  font-size: 2rem;
+  gap:10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+   <div class="navbar-top">
+     <div class="logo">
+      <img src="Images/b88b264bdea4cacb0a49c00e0da8648ef0b1dc89.png" alt="Wanderwise Logo" />
+      <span>Wanderwise</span>
+    </div>
+    <form id="searchForm" class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search destinations...">
+        <button type="submit">🔍</button>
+    </form>
+
+     <div class="nav-icons">
+        <div class="profile-menu">
+                <button class="profile-toggle" onclick="toggleDropdown()"><img src="images/c5f4b39135b64b251c4680bd42159b107aae9c4a.jpg" alt="Profile" class="icon profile" /></button>
+                    <div class="dropdown-list" id="dropdownList">
+                      <h1>My Accounts</h1><hr>
+                      <a href="Personal Information.html">Personal Information ➞</a>
+                        <a href="My Booking.html">My Booking ➞</a>
+                        <a href="Password Manager.html">Password Manager ➞</a>
+                        <a href="Logout.html">Logout ➞</a>
+                    </div>
+            </div>
+        <a href="Wishlist.html"><span><i class="bi bi-heart"></i></span></a>
+      <a href="Cart.html"><span><i class="bi bi-cart"></i></span></a>
+      <a href="Home.html"><span><i class="bi bi-bell"></i></span></a>
+    </div>
+  </div>
+  <div class="navbar-bottom">
+    <a href="Home.html">Home</a>
+    <a href="Destinations.html">Destinations</a>
+    <a href="Categories.html">Categories</a>
+    <a href="Packages.html">Packages</a>
+    <a href="Blogs.html">Blogs</a>
+    <a href="Contact.html">Contact</a>
+  </div>
+  <div class="cart-container">
+<h1 class="carthead">Wishlist Section</h1>
+<table class="cart-table">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Names</th>
+      <th>Price</th>
+      <th>Trip Date</th>
+      <th>Booking Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="images/acdc55b6218cd7b113c68d4566e5d84730f52f47.png" alt="Birthday Browny Mac"></td>
+      <td>Bali Vacation Trip</td>
+      <td >Rs.25000</td>
+      <td> 22 July 2025</td>
+      <td><a href="Checkout.html"><button class="add-btn">Add Booking</button></a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+  <footer class="wanderwise-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="Images/b88b264bdea4cacb0a49c00e0da8648ef0b1dc89.png" alt="Wanderwise Logo">
+      <h2>Wanderwise</h2>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <ul>
+          <li>Who We Are</li>
+          <li>Our Mission</li>
+          <li>How It Works</li>
+          <li>Success</li>
+          <li>Vacations</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li>Browse</li>
+          <li>Packages</li>
+          <li>Categories</li>
+          <li>Support</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Explore</h3>
+        <ul>
+          <li>Adventure</li>
+          <li>Beach</li>
+          <li>City Tours</li>
+          <li>Family</li>
+        </ul>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Contact & Social</h3>
+        <p>123 Saik Street, Chennai, TN</p>
+        <p>+91-7867980-688</p>
+        <p>Wan@wanderwisetravel.com</p>
+      </div>
+
+      <div class="footer-section">
+        <img src="Images/8c95e3ef46e407b0142cba5419c2cbb1714d7e95.jpg">
+        <div class="social-icons">
+            <h3>Follow Us On:</h3>
+          <span><i class="bi bi-youtube"></i></span>
+          <span><i class="bi bi-google"></i></span>
+          <span><i class="bi bi-facebook"></i></span>
+          <span><i class="bi bi-twitter"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 wanderwisevacation. All rights reserved.</p>
+    <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>  
+  function toggleHeart(element) {
+    element.classList.toggle('active');
+  }
+
+      function toggleDropdown() {
+  const dropdown = document.getElementById("dropdownList");
+  dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+// Optional: Close dropdown when clicking outside
+document.addEventListener("click", function (event) {
+  const menu = document.querySelector(".profile-menu");
+  if (!menu.contains(event.target)) {
+    document.getElementById("dropdownList").style.display = "none";
+  }
+});
+
+
+ document.getElementById('searchForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+
+    // Example routing logic
+    if (query === "Destination") {
+      window.location.href = "Destinations.html";
+    }  else {
+      window.location.href = "Destinations.html"; // fallback page
+    }
+  });
+</script>
+</body>
+</html>
